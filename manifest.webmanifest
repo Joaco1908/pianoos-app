@@ -2,9 +2,15 @@
   "name": "Piano Coach",
   "short_name": "Piano Coach",
   "start_url": "./",
+  "scope": "./",
   "display": "fullscreen",
   "orientation": "landscape",
-  "background_color": "#18202E",
-  "theme_color": "#18202E",
-  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+  "background_color": "#f4f2fc",
+  "theme_color": "#f4f2fc",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
 }
