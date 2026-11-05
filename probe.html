@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#14161b" />
+    <title>MIDI Probe · Piano Coach</title>
+    <script type="module" crossorigin src="./assets/probe-DchL5dEw.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/sources-rmhNKOks.js">
+    <link rel="stylesheet" crossorigin href="./assets/probe-Cj_XYsPX.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <h1>MIDI Probe</h1>
+        <span class="sub">Piano Coach · fase 0</span>
+      </div>
+      <div id="status" class="status" data-state="idle">Sin conectar</div>
+      <div class="actions">
+        <button id="connect" class="primary">Conectar MIDI</button>
+        <button id="fullscreen">Pantalla completa</button>
+        <button id="export">Exportar JSON</button>
+        <button id="clear">Limpiar</button>
+      </div>
+    </header>
+
+    <p id="error" class="error" hidden></p>
+    <ul id="ports" class="ports"><li class="muted">Pulsa «Conectar MIDI» y acepta el permiso del navegador.</li></ul>
+
+    <section class="keyboard-wrap">
+      <div id="keyboard" class="keyboard"></div>
+      <div class="kb-footer">
+        <div class="pedal">
+          <span>Sustain</span>
+          <div class="meter"><div id="pedal-fill"></div></div>
+          <output id="pedal-value">—</output>
+        </div>
+        <p class="hint">Simulador: teclas <kbd>A</kbd>–<kbd>L</kbd> y <kbd>W E T Y U O</kbd> · <kbd>Z</kbd>/<kbd>X</kbd> octava (<output id="octave">Do4</output>) · <kbd>Shift</kbd> fuerte · <kbd>Espacio</kbd> pedal · o toca las teclas en pantalla</p>
+      </div>
+    </section>
+
+    <main class="grid">
+      <section class="panel">
+        <h2>Diagnóstico</h2>
+        <ul id="checks" class="checks"></ul>
+        <dl id="counters" class="counters"></dl>
+      </section>
+      <section class="panel">
+        <h2>Velocity <small id="vel-summary"></small></h2>
+        <div id="histogram" class="histogram"></div>
+        <div class="axis"><span>1</span><span>64</span><span>127</span></div>
+      </section>
+      <section class="panel log-panel">
+        <h2>
+          Eventos
+          <label class="toggle"><input type="checkbox" id="show-sensing" /> active sensing</label>
+        </h2>
+        <div class="log-scroll">
+          <table class="log">
+            <thead><tr><th>t (ms)</th><th>Bytes</th><th>Mensaje</th></tr></thead>
+            <tbody id="log"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>
